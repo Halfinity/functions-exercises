@@ -8,14 +8,18 @@ function myReverse(str) {
 
 //Question 2
 function allCombinations(str) {
-  list = new Array();
-  for(i=0;i<s.length;i++) {
-      for(j=i+1;j<s.length+1;j++) {
-          list.push(s.slice(i, j));
-      }
-  return combinations;
-    }
+	let combinations = [];
+	let temp = "";
+	for (let i = 0; i < str.length; i++) {
+		temp = "";
+		for (let j = i; j < str.length; j++) {
+			temp += str[j];
+			combinations.push(temp);
+		}
+	}
+	return combinations;
 }
+    
 
 
 //Question 3
@@ -55,9 +59,15 @@ function getFirstNotRepeating(str) {
 
 //Question 6 (Bonus)
 function isPrefectNumber(num) {
-  // your code here
-  return "I'm not interested in the bonus question :(";
+	let sum = 0;
+	for (let i = 1; i < num; i++) {
+		if (num % i === 0) {
+			sum += i;
+		}
+	}
+	return num === sum;
 }
+
 
 // *** Playground ***
 // Feel free to run and test your code here on your own
