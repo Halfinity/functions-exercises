@@ -59,13 +59,26 @@ function getFirstNotRepeating(str) {
 
 //Question 6 (Bonus)
 function isPrefectNumber(num) {
-	let sum = 0;
-	for (let i = 1; i < num; i++) {
-		if (num % i === 0) {
-			sum += i;
-		}
-	}
-	return num === sum;
+  let divine = [];
+  let newNum = Number(num);
+
+  for (let i = 1; i < newNum; i++) {
+    if (newNum % i === 0) {
+      divine.push(i);
+    }
+  }
+
+  let sum = 0;
+
+  for (let i = 0; i < divine.length; i++) {
+    sum += divine[i];
+  }
+
+  if (sum === newNum) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 
